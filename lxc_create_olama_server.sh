@@ -7,7 +7,7 @@
 set -e
 
 # Variables
-TEMPL_URL="http://download.proxmox.com/images/system/ubuntu-23.04-standard_23.04-1_amd64.tar.zst"
+TEMPL_URL="http://download.proxmox.com/images/system/ubuntu-24.04-standard_24.04-2_amd64.tar.zst"
 PCTSIZE="20G"
 PCT_ARCH="amd64"
 PCT_CORES="4"
@@ -45,7 +45,7 @@ log "-- Creating LXC container with ID:$PCTID"
 pct create "$PCTID" "$TEMPL_FILE" \
    -arch $PCT_ARCH \
    -ostype ubuntu \
-   -hostname github-runner-proxmox-$(openssl rand -hex 3) \
+   -hostname ollama-proxmox-$(openssl rand -hex 3) \
    -cores $PCT_CORES \
    -memory $PCT_MEMORY \
    -swap $PCT_SWAP \
